@@ -53,12 +53,14 @@ function showMillionaires() {
 // Calculate the total wealth
 function calculateWealth() {
   const wealth = data.reduce((acc, user) => (acc += user.money), 0);
-
-  const wealthEl = document.createElement('div');
-  wealthEl.innerHTML = `<h3>Total Wealth: <strong>${formatMoney(
-    wealth
-  )}</strong></h3>`;
-  main.appendChild(wealthEl);
+  const wealthExsit = document.getElementsByTagName("h3");
+  if (wealthExsit.length==0){
+    const wealthEl = document.createElement('div');
+    wealthEl.innerHTML = `<h3>Total Wealth: <strong>${formatMoney(
+      wealth
+    )}</strong></h3>`;
+    main.appendChild(wealthEl);
+    }
 }
 
 // Add new obj to data arr
